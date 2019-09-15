@@ -27,8 +27,11 @@ def login():
     else:
         name = request.form["name"]
         password = request.form["password"]
+        user = db_session.query(User).filter_by(name=name).first()
+        if user is None or user.password != hash(password):
+            return render_template("login.html", error="Invalid Username or Password")
         session["name"] = name
-        return redirect(url_for("dashboard")) 
+        return redirect(url_for("dashboard"))
 
 @app.route("/logout")
 def logout():
