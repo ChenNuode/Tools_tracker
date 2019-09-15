@@ -3,15 +3,15 @@ from flask import Flask, render_template, session, redirect, url_for, request
 app = Flask(__name__)
 app.secret_key = "fixed"
 
-def get_username():
-    if "username" in session: return session["username"]
+def get_name():
+    if "name" in session: return session["name"]
     return False
 
 @app.route("/")
 def dashboard():
-    username = get_username()
-    if username:
-        return render_template("dashboard.html", username=username)
+    name = get_name()
+    if name:
+        return render_template("dashboard.html", name=name)
     return redirect(url_for("login"))
 
 @app.route("/login", methods=["GET", "POST"])
@@ -19,14 +19,14 @@ def login():
     if request.method == "GET":
         return render_template("login.html")
     else:
-        username = request.form["username"]
+        name = request.form["name"]
         password = request.form["password"]
-        session["username"] = username
+        session["name"] = name
         return redirect(url_for("dashboard")) 
 
 @app.route("/logout")
 def logout():
-    session.pop("username", None)
+    session.pop("name", None)
     return redirect(url_for("dashboard"))
 
 @app.route("/signup", methods=["GET", "POST"])
