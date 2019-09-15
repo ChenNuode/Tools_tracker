@@ -4,7 +4,7 @@ app = Flask(__name__)
 app.secret_key = "fixed"
 
 @app.route('/')
-def hello():
+def dashboard():
     return render_template("dashboard.html")
 
 @app.route('/inventory')
@@ -12,7 +12,6 @@ def inventory():
     #return "Hello World!"
     return render_template("inventory.html")
 
-"""
 @app.route('/staff')
 def staff():
     #return "Hello World!"
@@ -27,8 +26,6 @@ def requests():
 def profile():
     #return "Hello World!"
     return render_template("dashboard.html")
-
-"""
 
 if __name__ == '__main__':
     app.run(debug=True)
