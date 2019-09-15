@@ -1,24 +1,22 @@
 from sqlalchemy import Column, String, Integer, Date
-
 from base import Base
-
 
 class User(Base):
     __tablename__ = "users"
 
     id = Column(Integer, primary_key=True)
     type_no = Column(String)
-    name = Column(String)
     location = Column(String)
+    name = Column(String)
     password = Column(String)
 
-    def __init__(self, type_no, name, location, password):
+    def __init__(self, type_no, location, name, password):
         self.type_no = type_no
-        self.name = name
         self.location = location
+        self.name = name
         self.password = password
 
-class Items(Base):
+class Item(Base):
     __tablename__ = "items"
 
     id = Column(Integer, primary_key=True)

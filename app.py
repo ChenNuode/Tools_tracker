@@ -1,4 +1,6 @@
 from flask import Flask, render_template, session, redirect, url_for, request
+from classes import User, Item, Request
+from hash import hash
 
 app = Flask(__name__)
 app.secret_key = "fixed"
@@ -31,7 +33,15 @@ def logout():
 
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
-    return render_template("signup.html")
+    if request.method == "GET":
+        return render_template("signup.html")
+    else:
+        type_no = request.form["type_no"]
+        location = request.form["location"]
+        name = request.form["name"]
+        password = request.form["password"]
+        password = hash(password)
+
 
 @app.route("/inventory")
 def inventory():

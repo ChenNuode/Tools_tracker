@@ -5,11 +5,11 @@
   	{% include 'components/nav.html' %}
 	<div class="main">
 		<form action="/signup" method="POST">
+			<input type="number" name="type_no">
+			<input type="text" name="location">
 			<input type="text" name="name">
-			<input type="number">
 			<input type="password" name="password">
 			<input type="submit">
-			<!--self, type_no, name, location, password-->
 		</form>
 	</div>
   </body>
