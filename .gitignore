@@ -2,4 +2,4 @@
 !.gitignore
 !.gitattributes
 *~
-__pycache__
+/__pycache__/*
