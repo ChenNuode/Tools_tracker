@@ -24,8 +24,8 @@ def requests():
     #return "Hello World!"
     return render_template("dashboard.html")
 
-@app.route('/transactions')
-def transactions():
+@app.route('/profile')
+def profile():
     #return "Hello World!"
     return render_template("dashboard.html")
 
