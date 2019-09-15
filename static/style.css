@@ -1,10 +1,8 @@
-
-
 body {
   font-family: "Lato", sans-serif;
 }
 
-.mysidenav {
+#side_nav {
   height: 100%;
   width: 200px;
   position: fixed;
@@ -15,16 +13,14 @@ body {
   overflow-x: hidden;
   padding-top: 20px;
 }
-
-.mysidenav a {
+#side_nav a {
   padding: 6px 6px 6px 32px;
   text-decoration: none;
   font-size: 22px;
   color: #818181;
   display: block;
 }
-
-.mysidenav a:hover {
+#side_nav a:hover {
   color: #f1f1f1;
 }
 
@@ -34,7 +30,20 @@ body {
 }
 
 @media screen and (max-height: 450px) {
-  .mysidenav {padding-top: 15px;}
-  .mysidenav a {font-size: 18px;}
+  #side_nav {padding-top: 15px;}
+  #side_nav a {font-size: 18px;}
 }
 
+#brand {
+  position: absolute;
+  bottom: 15%;
+  color: white;
+  text-align: center;
+  width: 100%
+}
+#brand span {
+  font-size: 50px;
+}
+#brand p {
+  margin: 8px;
+}
