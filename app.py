@@ -29,7 +29,7 @@ def logout():
     session.pop("username", None)
     return redirect(url_for("dashboard"))
 
-@app.route("/signup")
+@app.route("/signup", methods=["GET", "POST"])
 def signup():
     return render_template("signup.html")
 

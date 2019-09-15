@@ -1,9 +1,15 @@
 <div id="side_nav">
+  {% if username %}
+  <a href="/profile">Hi {{ username }} </a>
   <a href="/">Home</a>
   <a href="/inventory">Inventory</a>
   <a href="/staff">Staff</a>
   <a href="/requests">Requests</a>
   <a href="/profile">Profile</a>
+  <a href="/logout">Logout</a>
+  {% else %}
+  <a href="/login">Login</a>
+  {% endif %}
 
   <div id="brand">
 	  <span>
